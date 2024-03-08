@@ -18,10 +18,10 @@ class Solution {
                 ans = m;
                 h = m-1;
             }
-            if(nums[m]<target){ // possible answer can be found int right subpart
+            else if(nums[m]<target){ // possible answer can be found int right subpart
                 l = m+1;
             }
-            if(nums[m]>target){ // possible answer cab be found in left subpart
+            else{ // possible answer cab be found in left subpart
                 h = m-1;
             }
         }
@@ -40,10 +40,10 @@ class Solution {
                 ans = m;
                 l = m+1;
             }
-            if(nums[m]<target){
+            else if(nums[m]<target){
                 l = m+1;
             }
-            if(nums[m]>target){
+            else{
                 h = m-1;
             }
         }
