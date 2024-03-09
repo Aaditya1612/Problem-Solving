@@ -1,4 +1,4 @@
-package HomeWork.Searching_1.Searching_2;
+package HomeWork.Searching_2;
 
 class Solution {
     public int singleNonDuplicate(int[] nums) {
