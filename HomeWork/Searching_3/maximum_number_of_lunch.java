@@ -29,7 +29,7 @@ public class maximum_number_of_lunch
 		    b[i] = sc.nextInt();
 		}
 		
-		HashMap<Integer, Integer> map = new HashMap<>(); // to keep track of number of items of particular ID
+		HashMap<Integer, Integer> map = new HashMap<>(); // to keep track of number of items of particular ID in list B.
         
         for(int i: b){
             map.put(i, map.getOrDefault(i, 0)+1);
