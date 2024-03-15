@@ -1,12 +1,12 @@
 
 import java.util.*;
 
-// T.C -> O(log(n))*O(n), n-> number of elements in b
+// T.C -> O(log(max(freq))*O(unique_food_items) + O(n), n -> length of B
 // S.C -> O(n)
 public class Main
 {
 
-    // function to check if it is possible to prepare mid number of lunches with every lunch having atleast a itmes.
+    // function to check if it is possible to prepare mid number of lunches with every lunch having at least A itmes.
     public static boolean ableToPrepareLunch(int[] b, int n, HashMap<Integer, Integer> map, int a, int mid){
 	        int items = 0;
 	        for(Map.Entry<Integer, Integer> entry: map.entrySet()){
