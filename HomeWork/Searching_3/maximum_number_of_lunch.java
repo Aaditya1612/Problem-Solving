@@ -1,24 +1,22 @@
-package HomeWork.Searching_3;
 
 import java.util.*;
 
-// T.C -> O(log(n))*O(n), n-> number of elements in b
+// T.C -> O(log(max(freq))*O(unique_food_items) + O(n), n -> length of B
 // S.C -> O(n)
-public class maximum_number_of_lunch
+public class Main
 {
 
-    // function to check if it is possible to prepare mid number of lunches with every lunch having atleast a itmes.
+    // function to check if it is possible to prepare mid number of lunches with every lunch having at least A itmes.
     public static boolean ableToPrepareLunch(int[] b, int n, HashMap<Integer, Integer> map, int a, int mid){
-        
-        int items = 0;
-        for(Map.Entry<Integer, Integer> entry: map.entrySet()){
-            if(entry.getValue() >= mid){
-                items++;
-            }
-        }
-        
-        return items>=a;
-    }
+	        int items = 0;
+	        for(Map.Entry<Integer, Integer> entry: map.entrySet()){
+	            if(entry.getValue() >= mid){
+	                items+=entry.getValue()/mid; // a lunch box can contain multiple items of same ID/
+	            }
+	        }
+	        
+	        return items>=a;
+    	}
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		int a = sc.nextInt();
@@ -30,13 +28,13 @@ public class maximum_number_of_lunch
 		}
 		
 		HashMap<Integer, Integer> map = new HashMap<>(); // to keep track of number of items of particular ID in list B.
+	        int low = 1;
+	        int high = -1;  // high can be maximum frequency
+	        for(int i: b){
+	            map.put(i, map.getOrDefault(i, 0)+1);
+	            high = Math.max(high, map.get(i));
+	        }
         
-        for(int i: b){
-            map.put(i, map.getOrDefault(i, 0)+1);
-        }
-		
-		int low = 1;
-		int high = n;
 		int ans = 0;
 		while(low<=high){
 		    int mid = low + (high - low)/2;
@@ -52,4 +50,3 @@ public class maximum_number_of_lunch
         sc.close();
 	}
 }
-
