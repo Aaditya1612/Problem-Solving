@@ -44,5 +44,7 @@ public class nth_term_divisible_by_a_b_c {
         int n = sc.nextInt();
         Solution obj = new Solution();
         System.out.println("Nth term is: "+obj.findNthTerm(a, b, c, n));
+
+        sc.close();
     }
 }
