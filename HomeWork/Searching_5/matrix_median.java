@@ -1,6 +1,12 @@
 package HomeWork.Searching_5;
 
-// T.C -> O(n) + O(log(max(A)-min(A)))*O(n)*O(log(m)) ,  n-> number of rows, m -> number of cols
+// Approach is similar to finding the median in 2 sorted array.
+// Here also if we make a 1D array from given matrix then we will get a sorted array and for this sorted array we need
+// to find the (n+m)/2th element, so what we can do is take a mid and find the number of elements lesser than mid in each 
+// row using binary search and if total count is equal to (n+m)/2 then mid is the median.
+// This approach is also valid for finding kth element.
+
+// // T.C -> O(n) + O(log(max(A)-min(A)))*O(n)*O(log(m)) ,  n-> number of rows, m -> number of cols
 class Solution {
     public int countElementsLessThan(int[][] A, int val){
         int cnt = 0;
