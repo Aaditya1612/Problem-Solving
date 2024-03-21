@@ -11,7 +11,7 @@ class Solution {
 
         while(low<=high){
             int mid = low + (high-low)/2;
-            int r = mid/n;
+            int r = mid/m;
             int c = mid%m; // Was tricky to be identify :)
             System.out.println(matrix[r][c]);
             if(matrix[r][c] == target){
