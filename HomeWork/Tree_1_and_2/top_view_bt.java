@@ -42,35 +42,7 @@ class Solution
 }
 
 
-// Recursive solution, S.C: O(N) + O(N)
-class Solution2
-{
-    static void traverse(Node root, TreeMap<Integer, Integer> map, int x){
-        if(root == null){
-            return;
-        }
-        
-        map.putIfAbsent(x, root.data);
-        traverse(root.left, map, x-1);
-        traverse(root.right, map, x+1);
-    }
-    
-    static ArrayList<Integer> topView(Node root)
-    {
-        TreeMap<Integer, Integer> map = new TreeMap<>();
-        ArrayList<Integer> ans = new ArrayList<>();
-        
-        traverse(root, map, 0);
-        
-        for(Map.Entry<Integer, Integer> entry: map.entrySet()){
-            ans.add(entry.getValue());
-        }
-        
-        return ans;
-        
-        
-    }
-}
+
 
 public class top_view_bt {
     
