@@ -30,7 +30,7 @@ class Solution {
     }
 }
 
-// Recursive
+// Recursive T.C. O(n), S.C. O(n) + O(NumberOfLevels) + O(n)
 class Solution2 {
     public void traverse(TreeNode root, Map<Integer, List<Integer>> map, int lvl){
         if(root == null){
