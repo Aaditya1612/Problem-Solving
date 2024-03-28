@@ -131,6 +131,45 @@ class Solution3 {
     }
 }
 
+//Method4, L1 R1 L2 R2
+
+class Solution4 {
+    public double findMedianSortedArrays(int[] nums1, int[] nums2) {
+        if (nums1.length > nums2.length) {
+            int[] temp = nums1;
+            nums1 = nums2;
+            nums2 = temp;
+        }
+
+        int m = nums1.length;
+        int n = nums2.length;
+        int left = 0, right = m, mid = (m + n + 1) / 2;
+
+        while (left <= right) {
+            int partition1 = (left + right) / 2;
+            int partition2 = mid - partition1;
+
+            int l1 = (partition1 == 0) ? Integer.MIN_VALUE : nums1[partition1 - 1];
+            int r1 = (partition1 == m) ? Integer.MAX_VALUE : nums1[partition1];
+
+            int l2 = (partition2 == 0) ? Integer.MIN_VALUE : nums2[partition2 - 1];
+            int r2 = (partition2 == n) ? Integer.MAX_VALUE : nums2[partition2];
+
+            if (l1 <= r2 && l2 <= r1) {
+                if ((m + n) % 2 == 0) {
+                    return (Math.max(l1, l2) + Math.min(r1, r2)) / 2.0;
+                } else {
+                    return Math.max(l1, l2);
+                }
+            } else if (l1 > r2) {
+                right = partition1 - 1;
+            } else {
+                left = partition1 + 1;
+            }
+        }
+        return -1;
+    }
+}
 
 
 public class median_of_two_sorted_arrays {
