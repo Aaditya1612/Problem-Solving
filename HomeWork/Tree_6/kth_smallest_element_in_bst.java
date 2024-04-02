@@ -1,6 +1,6 @@
 package HomeWork.Tree_6;
 
-// T.C: O(N), S.C: O(H)
+// T.C: O(K), S.C: O(H)
 class Solution {
     int ans = 0;
     int cnt = 0;
