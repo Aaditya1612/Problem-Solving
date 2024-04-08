@@ -31,7 +31,6 @@ class Trie{
     public int findMaxXOR(int val){
         TrieNode node = root;
         int i = 30;
-        StringBuilder sb = new StringBuilder();
         int xor = 0;
         while(i >= 0 && node!=null){
             int bit = (val&(1 << i)) > 0 ? 1 : 0;
