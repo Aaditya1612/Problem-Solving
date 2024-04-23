@@ -2,7 +2,7 @@ package HomeWork.Graph_4;
 
 import java.util.*;
 
-// Tried everything, and can gurantee that DFS solution won't work for this, because we need to traverse all the neighbours first and that is
+// Tried everything, the DFS solution won't work for this, because we need to traverse all the neighbours first and that is
 // the good approach to find minimal length of cycle
 
 
