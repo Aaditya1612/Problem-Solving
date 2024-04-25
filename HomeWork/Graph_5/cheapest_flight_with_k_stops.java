@@ -37,7 +37,7 @@ class Solution {
             adj.get(flight[0]).add(new Pair(flight[1], flight[2]));
         }
 
-        PriorityQueue<Trio> pq = new PriorityQueue<>((x, y) -> Integer.compare(x.stop, y.stop));
+        PriorityQueue<Trio> pq = new PriorityQueue<>((x, y) -> Integer.compare(x.stop, y.stop)); // tried using cost but failed on last test case
         int[] costs = new int[n];
         Arrays.fill(costs, Integer.MAX_VALUE);
         pq.add(new Trio(src, 0, -1)); // used -1 as stop value for source because we are not counting destination as source, means if we move directly from source to destination (if such path exists) hten number of stops will be zero.
