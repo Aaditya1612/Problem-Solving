@@ -72,6 +72,38 @@ class Solution2 {
     }
 }
 
+// sapce otimized version
+// T.C: O(n*target)
+// S.C: O(target)
+
+class Solution4 {
+    public int lengthOfLongestSubsequence(List<Integer> nums, int target){
+        int n = nums.size();
+        int[] dp = new int[target+1];
+
+        // dp[i] -> length of the longest subsequence to achieve target i till last state
+       
+        Arrays.fill(dp, -(int)1e9); // Initially mark all as not possible then we will eventually populate this dp array
+        dp[0] = 0;
+        if(nums.get(0) <= target)
+            dp[nums.get(0)] = 1; // the target which we can acheive from 0th index is the value at that index itself (the very initial state)
+        
+        for(int i=1; i<n; i++){
+            int[] currState = new int[target+1];
+            for(int j=1; j<=target; j++){
+                currState[j] = -(int)1e9; // currently marking j target as not possible
+                if(j >= nums.get(i)){
+                    currState[j] = 1+dp[j-nums.get(i)];
+                }
+                currState[j] = Math.max(currState[j], dp[j]);
+            }
+            dp = currState;
+        }
+
+        return dp[target] <= 0 ? -1 : dp[target];
+    }
+}
+
 public class length_of_longest_subsequence_that_sum_target {
     
 }
