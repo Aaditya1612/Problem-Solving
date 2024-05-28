@@ -1,4 +1,4 @@
-package HomeWork.DP1;
+package HomeWork.DP_1;
 
 class Solution {
     public int climbStairs(int n) {
